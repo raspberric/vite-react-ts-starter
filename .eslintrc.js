@@ -23,24 +23,10 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'react-hooks', 'prettier'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'import/no-unresolved': 'off', // watched by typescript instead
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object'],
-        'newlines-between': 'always',
-        pathGroups: [
-          {
-            pattern: '@/**',
-            group: 'external',
-            position: 'after',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['builtin'],
-      },
-    ],
+    'react/react-in-jsx-scope': 'off',
   },
   overrides: [
     {
